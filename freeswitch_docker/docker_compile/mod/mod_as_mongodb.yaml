@@ -1,0 +1,10 @@
+mod_as_mongodb:
+    mod_dir: mod_as_mongodb
+    version: '1.0.32.1'
+    description: "mod_as_mongodb"
+    libs:
+        libmod_as_mongodb:
+            load_conf: modules.conf.xml,<load module="<module_name>" critical="true"/>
+    config:
+        - mongodb.xml
+

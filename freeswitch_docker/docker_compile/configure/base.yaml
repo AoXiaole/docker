@@ -1,0 +1,10 @@
+#基础freeswitch镜像
+
+description: "base"
+image: "centos_7.4_fs_1.6.19_base"
+tag: v1
+
+# 本次镜像的基础镜像，基于这个镜像生成新的镜像
+base_image: "centos:7.4.1708"
+
+dockerfile: dockerfile_base

@@ -1,0 +1,23 @@
+mod_as_sipphone_axb:
+    version: '1.0.2.2'
+    description: packet for sipphone_axb 
+    libs:
+        mod_as_sipphone_axb:
+            dependence: 
+                - mod_as_dbcache
+                - mod_as_common
+                - mod_as
+            load_conf: as.conf.xml,<module name="<module_name>" bus_code="08"/>
+    config:
+        - sipphone_axb.xml
+
+    freeswitch_files:
+        - sounds/sipphone_axb/noharass.G723,sounds/
+        - sounds/sipphone_axb/noharass.G729,sounds/
+        - sounds/sipphone_axb/noharass.PCMA,sounds/
+        - sounds/sipphone_axb/noharass.wav,sounds/
+        - sounds/sipphone_axb/sipphone_playback_path_callback_forbidden.wav,sounds/
+        - sounds/sipphone_axb/sipphone_playback_path_calldirect_forbidden.wav,sounds/
+        - sounds/sipphone_axb/sipphone_playback_path_calldirect_no_right.wav,sounds/
+    
+  

@@ -1,0 +1,19 @@
+mod_as_private:
+    version: '1.0.0.4'
+    description: packet for mod_as_private 
+    libs:
+        mod_as_private:
+            dependence: 
+                - mod_as_dbcache
+                - mod_as_common
+                - mod_as_mongodb
+                - mod_as
+            load_conf: as.conf.xml,<module name="<module_name>" bus_code="09"/>
+    config:
+        - private.xml
+
+    freeswitch_files:
+        - sounds/base/as_no_right.G723,sounds/
+        - sounds/base/as_no_right.G729,sounds/
+        - sounds/base/as_no_right.PCMA,sounds/
+        - sounds/base/as_no_right.wav,sounds/

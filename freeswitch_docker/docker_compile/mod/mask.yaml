@@ -1,0 +1,11 @@
+mod_as_mask:
+    version: '1.0.14.0'
+    description:
+    libs:
+        mod_as_mask:
+            dependence: 
+                - mod_as_dbcache
+                - mod_as
+            load_conf: as.conf.xml,<module name="<module_name>" bus_code="03" redis_key="mask:%%s_%%s" key_mask="6"/>
+    config:
+        - mask.xml

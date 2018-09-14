@@ -1,0 +1,11 @@
+mod_as_numchange_bj:
+    mod_dir: mod_as_numchange
+    version: '1.0.2.2'
+    description: mod_as_numchange 
+    libs:
+        mod_as_numchange:
+            load_conf: modules.conf.xml,<load module="<module_name>" critical="true"/>
+    config:
+#        - mod_as_proxy.sz.xml
+        - mod_as_proxy.bj.xml
+        - mod_as_proxy_dialplan.xml

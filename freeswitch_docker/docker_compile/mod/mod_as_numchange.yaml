@@ -1,0 +1,13 @@
+mod_as_numchange:
+    version: '1.0.2.2'
+    description: mod_as_numchange 
+    libs:
+        mod_as_numchange:
+            dependence: 
+                - mod_as_dbcache
+                - mod_as_common
+            load_conf: modules.conf.xml,<load module="<module_name>" critical="true"/>
+    config:
+        - mod_as_proxy.sz.xml
+#        - mod_as_proxy.bj.xml
+        - mod_as_proxy_dialplan.xml

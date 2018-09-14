@@ -1,0 +1,21 @@
+mod_as_auto_answer:
+    version: '1.0.32.1'
+    description: "mod_as_auto_answer"
+    libs:
+        mod_as_auto_answer:
+            # 依赖模块
+            load_conf: modules.conf.xml,<load module="<module_name>" critical="true"/>
+    config:
+        - auto_answer.xml
+        
+        
+    freeswitch_files:
+        - sounds/95/95311_busy.G723,sounds/
+        - sounds/95/95311_busy.G729,sounds/
+        - sounds/95/95311_busy.PCMA,sounds/
+        - sounds/95/95311_busy.wav,sounds/
+        - sounds/base/bFailedAndVoiceToA.wav,sounds/
+        - sounds/95/95353_busy_2.wav,sounds/
+        - sounds/95/95353_busy_2.G723,sounds/
+        - sounds/95/95353_busy_2.G729,sounds/
+        - sounds/95/95353_busy_2.PCMA,sounds/

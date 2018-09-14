@@ -1,0 +1,11 @@
+FROM <BASEIMAGE>
+
+WORKDIR	/home
+COPY docker_update.tar.gz .
+RUN mkdir docker_update \
+	&& tar xvf docker_update.tar.gz -C docker_update\
+	&& cd docker_update/install \
+	&& sh  update_docker.sh \
+	&& cd ../../ \
+	&& rm docker_update docker_update.tar.gz -rf
+    

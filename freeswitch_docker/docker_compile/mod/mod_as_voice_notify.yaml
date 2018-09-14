@@ -1,0 +1,8 @@
+mod_as_voice_notify:
+    version: '1.0.2.2'
+    description: mod_as_voice_notify 
+    libs:
+        mod_as_voice_notify:
+            load_conf: modules.conf.xml,<load module="<module_name>" critical="true"/>
+    config:
+        - voicenotify.xml

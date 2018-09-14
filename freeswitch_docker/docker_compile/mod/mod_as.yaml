@@ -1,0 +1,11 @@
+mod_as:
+    version: '1.0.32.1'
+    description: "mod_as"
+    libs:
+        libmod_as:
+            load_conf: modules.conf.xml,<load module="<module_name>" critical="true"/>
+    freeswitch_files:
+        - src/mod/as/config/as.conf.xml,conf/autoload_configs/
+    conf:
+        as_dialplan.xml
+

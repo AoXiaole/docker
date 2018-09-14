@@ -1,0 +1,12 @@
+mod_as_event:
+    mod_dir: mod_as_event
+    version: '1.0.32.1'
+    description: "mod_as_event"
+    libs:
+        mod_as_event:
+            # 依赖模块
+            load_conf: modules.conf.xml,<load module="<module_name>" critical="true"/>
+    config:
+        # 由于有深圳和北京的区别，可以在configure的配置文件的system_files配置中增加特殊配置文件
+        # 也可以新增一个mod_as_event_dj.yaml配置
+#        - as.sz.xml

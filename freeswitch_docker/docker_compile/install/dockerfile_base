@@ -1,0 +1,19 @@
+FROM <BASEIMAGE>
+
+WORKDIR	/home
+
+RUN yum install git -y \
+    && git clone http://aominle:123456789@10.0.7.145/33e9/freeswitch-1.6.19.git \
+    && cp freeswitch-1.6.19/src/mod/as/docker_compile/install/setup_freeswitch.sh freeswitch-1.6.19/src/mod/as/docker_compile/install/entrypoint.sh ./ \
+    && sh setup_freeswitch.sh freeswitch-1.6.19 \
+    && rm setup_freeswitch.sh \
+    && rm freeswitch-1.6.19  -rf \
+    && ln -s /usr/local/freeswitch/bin/freeswitch /usr/bin/ \
+    && ln -s /usr/local/freeswitch/bin/fs_cli /usr/bin/ \
+    && sed -i '3a\    <param name="apply-inbound-acl" value="lan"/>' /usr/local/freeswitch/conf/autoload_configs/event_socket.conf.xml \
+    && sed -i 's?<param name="listen-ip" value="::"/>?<param name="listen-ip" value="$${local_ip_v4}"/>?g' /usr/local/freeswitch/conf/autoload_configs/event_socket.conf.xml \
+    && chmod +x entrypoint.sh \
+    && rm /usr/local/freeswitch/conf/sip_profiles/external-ipv6.xml -f \
+    && rm /usr/local/freeswitch/conf/sip_profiles/internal-ipv6.xml -f 
+
+ENTRYPOINT ["/home/entrypoint.sh"]    

@@ -1,0 +1,6 @@
+mod_as_callcenter_agents_manage:
+    version: '1.0.32.1'
+    description: "mod_as_callcenter_agents_manage"
+    libs:
+        mod_as_callcenter_agents_manage:
+            load_conf: modules.conf.xml,<load module="<module_name>" critical="true"/>

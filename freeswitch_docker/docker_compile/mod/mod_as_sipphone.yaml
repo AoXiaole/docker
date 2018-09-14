@@ -1,0 +1,21 @@
+mod_as_sipphone:
+    mod_dir: mod_as_sipphone
+    version: '1.0.32.1'
+    description: "mod_as_sipphone"
+    libs:
+        mod_as_sipphone:
+            # 依赖模块
+            dependence: 
+                - mod_as_dbcache
+                - mod_as_common
+                - mod_as
+            load_conf: as.conf.xml,<module name="<module_name>" bus_code="02"/>
+    config:
+        - sipphone.xml
+        
+        
+    freeswitch_files:
+        - sounds/base/bFailedAndVoiceToA.G723,sounds/
+        - sounds/base/bFailedAndVoiceToA.G729,sounds/
+        - sounds/base/bFailedAndVoiceToA.PCMA,sounds/
+        - sounds/base/bFailedAndVoiceToA.wav,sounds/

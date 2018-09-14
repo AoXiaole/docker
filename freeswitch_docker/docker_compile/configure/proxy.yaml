@@ -1,0 +1,15 @@
+description: "proxy"
+image: "centos7.4_fs1.6.19_proxy"
+tag: v1
+# 本次镜像的基础镜像，基于这个镜像生成新的镜像
+base_image: "centos_7.4_fs_1.6.19_base:v1"
+
+dockerfile: dockerfile_service
+#增加的freeswitch的模块,顺序很重要，表示先后加载顺序
+modules:
+    - mod_as_dbcache
+    - mod_as_common
+    - mod_as_numchange_bj
+
+system_files:
+    - src/mod/as/config/as.bj.xml,/usr/local/freeswitch/conf/dialplan/

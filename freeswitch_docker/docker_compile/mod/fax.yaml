@@ -1,0 +1,19 @@
+mod_as_fax:
+    version: '1.0.2.2'
+    description: mod_as_fax 
+    libs:
+        mod_as_fax:
+            dependence: 
+                - mod_as_dbcache
+            load_conf: modules.conf.xml,<load module="<module_name>" critical="true"/>
+    config:
+        - fax.xml
+        - fax_diaplain.xml
+
+    freeswitch_files:
+        - scripts/as/fax/common.sh,scripts/
+        - scripts/as/fax/configure.ini,scripts/
+        - scripts/as/fax/convert_tiff.sh,scripts/
+        - scripts/as/fax/msyh.ttf,scripts/
+    
+  

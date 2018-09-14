@@ -1,0 +1,39 @@
+description: "as"
+image: "centos7.4_fs1.6.19_as"
+tag: v1
+# 本次镜像的基础镜像，基于这个镜像生成新的镜像
+base_image: "centos_7.4_fs_1.6.19_base:v1"
+
+dockerfile: dockerfile_service
+#增加的freeswitch的模块,顺序很重要，表示先后加载顺序
+modules:
+    - mod_as_dbcache
+    - mod_as_common
+    - mod_as_event
+    - mod_as_counter_client
+    - mod_as_mongodb
+    - mod_as
+    - mod_as_mask
+    - mod_as_sipphone
+    - mod_as_callcenter
+    - mod_as_zj
+    - mod_as_call_verification
+    - mod_as_sip
+    - mod_as_sipphone_axb
+    
+    # 带mongdb:
+    - mod_as_private
+
+# 第三方库安装 , 库的顶层路径是git上拉取下来的freswitch的源码目录
+third_libs:
+    mongodb:
+        libfile: "libs/mongo-c-driver-1.9.5.tar.gz"
+        install: "mongodb_install.sh"
+#    rabbitmq:
+#        libfile: "libs/AMQP-CPP-master.zip"
+#        install: "rabbitmq_install_zip.sh"
+
+# 需要从freeswitch源码中移到docker文件系统的文件
+# 例如 一些深圳和北京服务器的差异文件可以通过这个方式进行文件的移动
+system_files:
+        - src/mod/as/config/as.sz.xml,/usr/local/freeswitch/conf/dialplan/

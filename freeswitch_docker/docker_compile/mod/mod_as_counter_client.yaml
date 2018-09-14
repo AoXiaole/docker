@@ -1,0 +1,8 @@
+mod_as_counter_client:
+    mod_dir: mod_as_counter_client
+    version: '1.0.32.1'
+    description: "mod_as_counter_client"
+    libs:
+        libmod_as_counter_client:
+            # 依赖模块      
+            load_conf: modules.conf.xml,<load module="<module_name>" critical="true"/>

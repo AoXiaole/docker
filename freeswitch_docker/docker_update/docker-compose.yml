@@ -1,0 +1,124 @@
+version: "2"
+services:
+
+    freeswitch_221:
+        container_name: fs_221
+        hostname: fs_221
+        networks:
+            docker_net:
+                 ipv4_address: 192.168.0.221
+        image: aominle/centos7.4_fs1.6.19:v4
+        volumes:
+               - /data/freeswitch_mnt/fs_221/conf:/usr/local/freeswitch/conf
+               - /data/freeswitch_mnt/fs_221/db:/usr/local/freeswitch/db
+               - /data/freeswitch_mnt/fs_221/log:/usr/local/freeswitch/log
+               - /data/freeswitch_mnt/fs_221/mod:/usr/local/freeswitch/mod
+               - /data/freeswitch_mnt/fs_221/recordings:/usr/local/freeswitch/recordings
+               - /data/freeswitch_mnt/fs_221/scripts:/usr/local/freeswitch/scripts
+               - /data/freeswitch_mnt/fs_221/sounds:/usr/local/freeswitch/sounds
+               - /etc/localtime:/etc/localtime:ro
+#        privileged: true
+        stdin_open: true
+        tty: true
+       
+      
+    freeswitch_222:
+        container_name: fs_222
+        hostname: fs_222
+        networks:
+            docker_net:
+                 ipv4_address: 192.168.0.222
+
+        image: aominle/centos7.4_fs1.6.19:v4
+        volumes:
+               - /data/freeswitch_mnt/fs_222/conf:/usr/local/freeswitch/conf
+               - /data/freeswitch_mnt/fs_222/db:/usr/local/freeswitch/db
+               - /data/freeswitch_mnt/fs_222/log:/usr/local/freeswitch/log
+               - /data/freeswitch_mnt/fs_222/mod:/usr/local/freeswitch/mod
+               - /data/freeswitch_mnt/fs_222/recordings:/usr/local/freeswitch/recordings
+               - /data/freeswitch_mnt/fs_222/scripts:/usr/local/freeswitch/scripts
+               - /data/freeswitch_mnt/fs_222/sounds:/usr/local/freeswitch/sounds
+               - /etc/localtime:/etc/localtime:ro
+#        privileged: true
+        stdin_open: true
+        tty: true
+
+    freeswitch_223:
+        container_name: fs_223
+        hostname: fs_223
+        networks:
+            docker_net:
+                 ipv4_address: 192.168.0.223
+
+        image: aominle/centos7.4_fs1.6.19:v4
+        volumes:
+               - /data/freeswitch_mnt/fs_223/conf:/usr/local/freeswitch/conf
+               - /data/freeswitch_mnt/fs_223/db:/usr/local/freeswitch/db
+               - /data/freeswitch_mnt/fs_223/log:/usr/local/freeswitch/log
+               - /data/freeswitch_mnt/fs_223/mod:/usr/local/freeswitch/mod
+               - /data/freeswitch_mnt/fs_223/recordings:/usr/local/freeswitch/recordings
+               - /data/freeswitch_mnt/fs_223/scripts:/usr/local/freeswitch/scripts
+               - /data/freeswitch_mnt/fs_223/sounds:/usr/local/freeswitch/sounds
+               - /etc/localtime:/etc/localtime:ro
+#        privileged: true
+        stdin_open: true
+        tty: true
+
+    freeswitch_224:
+        container_name: fs_224
+        hostname: fs_224
+        networks:
+            docker_net:
+                 ipv4_address: 192.168.0.224
+
+        image: aominle/centos7.4_fs1.6.19:v4
+        volumes:
+               - /data/freeswitch_mnt/fs_224/conf:/usr/local/freeswitch/conf
+               - /data/freeswitch_mnt/fs_224/db:/usr/local/freeswitch/db
+               - /data/freeswitch_mnt/fs_224/log:/usr/local/freeswitch/log
+               - /data/freeswitch_mnt/fs_224/mod:/usr/local/freeswitch/mod
+               - /data/freeswitch_mnt/fs_224/recordings:/usr/local/freeswitch/recordings
+               - /data/freeswitch_mnt/fs_224/scripts:/usr/local/freeswitch/scripts
+               - /data/freeswitch_mnt/fs_224/sounds:/usr/local/freeswitch/sounds
+               - /etc/localtime:/etc/localtime:ro
+#        privileged: true
+        stdin_open: true
+        tty: true
+    freeswitch_225:
+        container_name: fs_225
+        hostname: fs_225
+        networks:
+            docker_net:
+                 ipv4_address: 192.168.0.225
+
+        image: aominle/centos7.4_fs1.6.19:v4
+        volumes:
+               - /data/freeswitch_mnt/fs_225/conf:/usr/local/freeswitch/conf
+               - /data/freeswitch_mnt/fs_225/db:/usr/local/freeswitch/db
+               - /data/freeswitch_mnt/fs_225/log:/usr/local/freeswitch/log
+               - /data/freeswitch_mnt/fs_225/mod:/usr/local/freeswitch/mod
+               - /data/freeswitch_mnt/fs_225/recordings:/usr/local/freeswitch/recordings
+               - /data/freeswitch_mnt/fs_225/scripts:/usr/local/freeswitch/scripts
+               - /data/freeswitch_mnt/fs_225/sounds:/usr/local/freeswitch/sounds
+               - /etc/localtime:/etc/localtime:ro
+#        privileged: true
+        stdin_open: true
+        tty: true
+
+
+
+networks:
+    docker_net:
+        external:
+            name: fs_net
+         
+
+
+
+
+
+
+
+
+
+   

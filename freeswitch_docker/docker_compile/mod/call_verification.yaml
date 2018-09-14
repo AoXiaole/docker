@@ -1,0 +1,18 @@
+mod_as_call_verification:
+    version: '1.0.0.2'
+    description:
+    libs:
+        mod_as_call_verification:
+            dependence:
+                - mod_as
+                - mod_as_dbcache
+            load_conf: as.conf.xml,<module name="<module_name>" bus_code="07" caller_trunk_usetype="2"/>
+    config:
+        - call_verification.xml
+
+    freeswitch_files:
+        - sounds/call_verification/call_verification_successful.G723,webapp/voice/nas/
+        - sounds/call_verification/call_verification_successful.G729,webapp/voice/nas/
+        - sounds/call_verification/call_verification_successful.PCMA,webapp/voice/nas/
+        - sounds/call_verification/call_verification_successful.wav,webapp/voice/nas/
+

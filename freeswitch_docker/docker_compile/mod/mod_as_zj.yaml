@@ -1,0 +1,12 @@
+mod_as_zj:
+    version: '1.0.3'
+    description:
+    libs:
+        mod_as_zj:
+            dependence:
+                - mod_as_dbcache
+                - mod_as
+            load_conf: as.conf.xml,<module name="<module_name>" bus_code=""/>
+
+    config:
+        - zj.xml
